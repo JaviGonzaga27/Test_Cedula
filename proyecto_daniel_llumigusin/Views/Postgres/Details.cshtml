@@ -1,0 +1,84 @@
+﻿@model proyecto_javier.Models.ClientePS
+
+@{
+    ViewData["Title"] = "Detalle del Cliente";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-primary">Detalle del Cliente</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Detalle del Cliente</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h3 class="card-title mb-0">Información del Cliente</h3>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Código:</strong></p>
+                    <p>@Model.Codigo</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Cédula:</strong></p>
+                    <p>@Model.Cedula</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Apellidos:</strong></p>
+                    <p>@Model.Apellidos</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Nombres:</strong></p>
+                    <p>@Model.Nombres</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Fecha de Nacimiento:</strong></p>
+                    <p>@Model.FechaNacimiento.ToString("dd/MM/yyyy")</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Email:</strong></p>
+                    <p>@Model.Mail</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Teléfono:</strong></p>
+                    <p>@Model.Telefono</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Dirección:</strong></p>
+                    <p>@Model.Direccion</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Estado:</strong></p>
+                    <p>
+                        @if (Model.Estado)
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactivo</span>
+                        }
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Saldo:</strong></p>
+                    <p>@Model.Saldo.ToString("C2")</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent">
+            <a asp-action="Index" asp-controller="Postgres" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>Volver a la Lista
+            </a>
+            <a asp-action="Edit" asp-controller="Postgres" asp-route-id="@Model.Codigo" class="btn btn-primary ms-2">
+                <i class="fas fa-edit me-2"></i>Editar
+            </a>
+        </div>
+    </div>
+</div>

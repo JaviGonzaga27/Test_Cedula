@@ -1,0 +1,8 @@
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.csproj.AssemblyReference.cache
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.AssemblyInfoInputs.cache
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.AssemblyInfo.cs
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.csproj.CoreCompileInputs.cache
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.RazorAssemblyInfo.cache
+C:\Users\DANIEL\source\repos\proyecto_daniel_llumigusin\proyecto_daniel_llumigusin\obj\Debug\net6.0\proyecto_daniel_llumigusin.RazorAssemblyInfo.cs

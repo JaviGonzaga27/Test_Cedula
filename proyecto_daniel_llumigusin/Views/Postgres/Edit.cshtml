@@ -1,0 +1,113 @@
+﻿@model proyecto_javier.Models.ClientePS
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary">Editar Cliente</h2>
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Codigo" class="form-label">Código</label>
+                        <input asp-for="Codigo" class="form-control" readonly />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Cedula" class="form-label">Cédula</label>
+                        <input asp-for="Cedula" class="form-control" readonly />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Apellidos" class="form-label">Apellidos</label>
+                        <input asp-for="Apellidos" class="form-control" maxlength="50" />
+                        <span asp-validation-for="Apellidos" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Nombres" class="form-label">Nombres</label>
+                        <input asp-for="Nombres" class="form-control" maxlength="50" />
+                        <span asp-validation-for="Nombres" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input asp-for="FechaNacimiento" type="date" class="form-control"
+                               min="1900-01-01" max="2023-12-31"
+                               data-date-format="yyyy-mm-dd" />
+                        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Mail" class="form-label">Email</label>
+                        <input asp-for="Mail" type="email" class="form-control" />
+                        <span asp-validation-for="Mail" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Telefono" class="form-label">Teléfono</label>
+                        <input asp-for="Telefono" class="form-control" maxlength="10" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Direccion" class="form-label">Dirección</label>
+                        <input asp-for="Direccion" class="form-control" maxlength="200" />
+                        <span asp-validation-for="Direccion" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Saldo" class="form-label">Saldo</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="Saldo" type="number" step="0.01" class="form-control" placeholder="0.00" />
+                        </div>
+                        <span asp-validation-for="Saldo" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check form-switch mt-4">
+                            <input asp-for="Estado" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado (Activo/Inactivo)</label>
+                        </div>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent text-end">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Guardar Cambios
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary ms-2">
+                    <i class="fas fa-arrow-left me-2"></i>Regresar
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $('form').on('submit', function () {
+                if ($(this).valid()) {
+                    $(this).find(':submit').attr('disabled', 'disabled');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Asegura que la fecha se muestre en formato yyyy-mm-dd
+            var fechaNacimiento = document.getElementById('FechaNacimiento');
+            fechaNacimiento.addEventListener('input', function (e) {
+                var date = new Date(this.value);
+                if (!isNaN(date.getTime())) {
+                    this.value = date.getFullYear().toString() + '-' + 
+                                 (date.getMonth() + 1).toString().padStart(2, '0') + '-' +
+                                 date.getDate().toString().padStart(2, '0');
+                }
+            });
+        });
+    </script>
+}
+}

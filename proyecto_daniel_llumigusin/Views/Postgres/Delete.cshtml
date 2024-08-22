@@ -1,0 +1,41 @@
+﻿@model proyecto_javier.Models.ClientePS
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="mb-0">Eliminar Cliente</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title mb-4">@Model.Nombres @Model.Apellidos</h4>
+                    <div class="alert alert-warning" role="alert">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        ¿Está seguro de que desea eliminar este cliente?
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-3">Código:</dt>
+                        <dd class="col-sm-9">@Model.Codigo</dd>
+                        <dt class="col-sm-3">Cédula:</dt>
+                        <dd class="col-sm-9">@Model.Cedula</dd>
+                        <dt class="col-sm-3">Email:</dt>
+                        <dd class="col-sm-9">@Model.Mail</dd>
+                        <dt class="col-sm-3">Teléfono:</dt>
+                        <dd class="col-sm-9">@Model.Telefono</dd>
+                    </dl>
+                    <form asp-action="Delete" class="mt-4">
+                        <input type="hidden" name="id" value="@Model.Codigo" />
+                        <div class="d-flex justify-content-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-2">
+                                <i class="fas fa-times me-2"></i>Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash-alt me-2"></i>Eliminar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
